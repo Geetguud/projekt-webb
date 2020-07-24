@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+
 * {
 	padding: 0;
 	margin: 0;
@@ -14,36 +22,33 @@ a {
 
 nav {
 	height: 100%;
-	width: 5em;
+	width: 1.5em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ddd;
+	font-size: 3em;
+	padding: 0 0 0 0.5em;
 }
 
 nav ul {
-	transform: rotate(-90deg);
+	width: 100%;
+	height: 100%;
 	list-style: none;
 	display: flex;
-	flex-direction: row-reverse;
-	font-size: 1.85em;
-	font-family: "Open Sans", sans-serif;
-	font-weight: 800;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .link {
-	color: #222;
-	padding: 0.8em 1em;
-	transition: color 0.4s ease-out, padding 0.2s ease-out, letter-spacing 0.2s ease-in-out;
+	margin: 0.5em 0;
 }
 
-.link:hover {
-	color: #333;
-	padding: 0.8em 1.5em;
-	letter-spacing: 0.1em;
+.link a i {
+	color: #fff;
 }
 
 .welcome {
