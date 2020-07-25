@@ -16,6 +16,22 @@ html {
 	scroll-behavior: smooth;
 }
 
+@media (max-width: 960px) {
+	html {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 720px) {
+	html {
+		font-size: 6px;
+	}
+
+	nav {
+		visibility: hidden;
+	}
+}
+
 a {
 	text-decoration: none;
 }
@@ -86,10 +102,24 @@ nav ul {
 }
 
 .geetguud {
-	max-width: 60%;
-	max-height: 60%;
+	max-width: 40em;
+	max-height: 40em;
 	margin: 4em;
 	border-radius: 50%;
+}
+
+@media (max-width: 720px) {
+	.welcome {
+		flex-direction: column-reverse;
+	}
+
+	.welcome div {
+		align-items: center;
+	}
+
+	.welcome div p {
+		margin: 0;
+	}
 }
 
 .detail {
@@ -121,11 +151,11 @@ nav ul {
 	font-weight: 500;
 	color: #ddd;
 	text-align: center;
-	padding: 1em;
+	padding: 0.5em;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	margin-right: 2em;
+	margin-left: 2em;
 }
 
 .detail2 p {
@@ -134,8 +164,30 @@ nav ul {
 }
 
 .geetguudsmol {
-	max-width: 40%;
-	max-height: 40%;
+	max-width: 8em;
+	max-height: 8em;
 	margin-top: 1em;
 	border-radius: 0.25em;
+}
+
+@media (max-width: 720px) {
+	.detail {
+		flex-direction: column;
+	}
+
+	.detail1 {
+		max-width: 85%;
+		margin-bottom: 1em;
+	}
+
+	.detail2 {
+		max-width: 85%;
+		padding: 0;
+		margin: 0;
+		font-size: 3em;
+	}
+
+	.detail2 p {
+		margin: 0;
+	}
 }
