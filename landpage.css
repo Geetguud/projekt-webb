@@ -74,20 +74,68 @@ nav ul {
 	font-weight: 700;
 	color: #eee;
 	letter-spacing: 0.06em;
+	margin-bottom: 0.15em;
 }
 
 .welcome div p {
 	font-family: "Roboto Slab", serif;
-	font-size: 4.5em;
+	font-size: 5em;
 	color: #ccc;
-	margin-top: 0.6em;
+	margin-right: 0.8em;
+	font-weight: 600;
 }
 
 .geetguud {
-	max-width: 50vh;
-	max-height: 50vh;
+	max-width: 60%;
+	max-height: 60%;
 	margin: 4em;
 	border-radius: 50%;
-	border: 2em double #fff;
-	box-shadow: 0 0 0.4em 0.4em #333;
+}
+
+.detail {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
+}
+
+.detail1 {
+	max-width: 40%;
+	font-family: "Open Sans", sans-serif;
+	font-size: 3em;
+	color: #eee;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.detail2 {
+	max-width: 40%;
+	font-family: "Raleway", sans-serif;
+	font-size: 2.5em;
+	font-weight: 500;
+	color: #ddd;
+	text-align: center;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-right: 2em;
+}
+
+.detail2 p {
+	margin: 0.5em 0;
+	line-height: 1.5em;
+}
+
+.geetguudsmol {
+	max-width: 40%;
+	max-height: 40%;
+	margin-top: 1em;
+	border-radius: 0.25em;
 }
