@@ -1,7 +1,7 @@
 "use strict"
 
 let currentValue = [""];
-let abort = [];
+let abort = false;
 
 function numEnter(num) {
     if (currentValue === "∞") {return}
@@ -82,14 +82,19 @@ function equals() {
     if (operates.includes("/") || operates.includes("x")) {
         for (let i = 0; i < operates.length; i++) {
             if (operates[i] === 'x') {
-                if (resolve[i + 1] === 0) {abort.push(0)}
+                if (resolve[i + 1] === 0) {
+                    resolve.splice(i, 2, 0);
+                    operates.splice(i, 1);
+                    i--;
+                    continue
+                }
                 let operate = resolve.splice(i, 2).reduce((total, item) => total * item);
                 resolve.splice(i, 0, operate);
                 operates.splice(i, 1);
                 i--;
             }
             if (operates[i] === '/') {
-                if (resolve[i + 1] === 0) {abort.push(1)}
+                if (resolve[i + 1] === 0) {abort = true}
                 let operate = resolve.splice(i, 2).reduce((total, item) => total / item);
                 resolve.splice(i, 0, operate);
                 operates.splice(i, 1);
@@ -124,12 +129,8 @@ function equals() {
 }
 
 function checkAbort() {
-    if (abort[0] === 0) {
-        abort = [];
-        currentValue = [0];
-        document.getElementById("result").innerHTML = 0;
-    } else if (abort[0] === 1) {
-        abort = [];
+    if (abort) {
+        abort = false;
         currentValue = [""];
         document.getElementById("result").innerHTML = "&infin;";
     }
