@@ -16,17 +16,13 @@ html {
 
 body {
     width: 70em;
-    height: 50em;
+    min-height: 50em;
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 0.4em solid #333333;
-    border-bottom: 0.4em solid #333333;
-    border-radius: 2%;
-    border-left: 0.2em solid #333333;
-    border-right: 0.2em solid #333333;
+    padding: 0.01em;
 }
 
 h1 {
@@ -35,8 +31,8 @@ h1 {
 }
 
 .result {
-    width: 90%;
-    height: 2em;
+    max-width: 90%;
+    min-height: 2em;
     border-bottom: 0.01em solid #333333;
     margin: 0.5em 0;
     color: #333333;
