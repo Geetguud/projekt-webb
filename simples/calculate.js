@@ -1,32 +1,36 @@
 "use strict"
 
-let currentValue = [""];
+let values = [""];
 let abort = false;
+let isEquals = false;
 
 function numEnter(num) {
-    if (currentValue === "∞") {return}
-    if (!currentValue[currentValue.length - 1]) {
-        currentValue[currentValue.length - 1] = num;
+    if (!values[values.length - 1] || isEquals) {
+        isEquals = false;
+        values[values.length - 1] = num;
         display();
     } else {
-        currentValue[currentValue.length - 1] = (currentValue[currentValue.length - 1] * 10) + num;
+        values[values.length - 1] = (values[values.length - 1] * 10) + num;
         display();
     }
 }
 
 function display() {
-    if (typeof currentValue[currentValue.length - 1] === "number") {
-        document.getElementById("result").innerHTML = currentValue.map(item => getNumDisplay(item)).join(" ");    
+    if (typeof values[values.length - 1] === "number") {
+        document.getElementById("result").innerHTML = values.map(item => getNumDisplay(item)).join(" ");    
     } else {
-        document.getElementById("result").innerHTML = currentValue.join(" ");
+        document.getElementById("result").innerHTML = values.join(" ");
     }
 }
 
 function getNumDisplay(num) {
-    if (typeof num === "string") {return num}
+    if (typeof num !== "number") {return num}
+    let conste = Math.abs([num].slice()[0]);
+    let reverst = false;
+    if (num < 0) {reverst = true}
     if (!Number.isInteger(num)) {
-        let fraction = "." + num.toString().split(".")[1]
-        let resolve = num.toString().split(".")[0].split("").reverse();
+        let fraction = "." + conste.toString().split(".")[1]
+        let resolve = conste.toString().split(".")[0].split("").reverse();
         let result = [];
         for (let i = 3; resolve.length; i--) {
             if (i === 0) {
@@ -35,9 +39,10 @@ function getNumDisplay(num) {
             }
         result.unshift(resolve.shift());
         }
+        if (reverst) {result.unshift("-")}
         return result.join("") + fraction;
     }
-    let resolve = num.toString().split("").reverse();
+    let resolve = conste.toString().split("").reverse();
     let result = [];
     for (let i = 3; resolve.length; i--) {
         if (i === 0) {
@@ -46,39 +51,44 @@ function getNumDisplay(num) {
         }
         result.unshift(resolve.shift());
     }
+    if (reverst) {result.unshift("-")}
     return result.join("")
 }
 
+function getNumber(numstr) {
+    if (typeof numstr !== 'string') {return numstr}
+    return Number(numstr.slice(0).split(",").join(""));
+}
+
 function operator(op) {
-    currentValue[currentValue.length - 1] = getNumDisplay(currentValue[currentValue.length - 1]);
-    if (!currentValue[currentValue.length - 1] && typeof currentValue[currentValue.length - 2] === "string") {
+    values[values.length - 1] = getNumDisplay(values[values.length - 1]);
+    if (!values[values.length - 1] && typeof values[values.length - 2] === "string") {
         switch(op) {
-            case "+": currentValue[currentValue.length - 2] = "+"; break;
-            case "-": currentValue[currentValue.length - 2] = "-"; break;
-            case "x": currentValue[currentValue.length - 2] = "x"; break;
-            case "/": currentValue[currentValue.length - 2] = "/"; break;
+            case "+": values[values.length - 2] = "+"; break;
+            case "-": values[values.length - 2] = "-"; break;
+            case "x": values[values.length - 2] = "x"; break;
+            case "/": values[values.length - 2] = "/"; break;
         }    
     } else {
         switch(op) {
-            case "+": currentValue.push("+"); break;
-            case "-": currentValue.push("-"); break;
-            case "x": currentValue.push("x"); break;
-            case "/": currentValue.push("/"); break;
+            case "+": values.push("+"); break;
+            case "-": values.push("-"); break;
+            case "x": values.push("x"); break;
+            case "/": values.push("/"); break;
         }
-        currentValue.push("");
+        values.push("");
     }
     display();
 }
 
 function equals() {
-    if (currentValue[currentValue.length - 1] === "") {currentValue.splice(-2, 2)}
-    if (currentValue.length === 1) {
+    if (values[values.length - 1] === "") {values.splice(-2, 2)}
+    if (values.length === 1) {
         display();
         return
     }
-    currentValue[currentValue.length - 1] = getNumDisplay(currentValue[currentValue.length - 1]);
-    let resolve = currentValue.filter((item, index) => !(index % 2)).map(item => Number(item.toString().split(",").join("")));
-    let operates = currentValue.filter((item, index) => index % 2);
+    let resolve = values.filter((item, index) => !(index % 2)).map(item => getNumber(item));
+    let operates = values.filter((item, index) => index % 2);
     if (operates.includes("/") || operates.includes("x")) {
         for (let i = 0; i < operates.length; i++) {
             if (operates[i] === 'x') {
@@ -88,14 +98,16 @@ function equals() {
                     i--;
                     continue
                 }
-                let operate = resolve.splice(i, 2).reduce((total, item) => total * item);
+                let operate = resolve.splice(i, 2);
+                operate = operate[0] * operate[1];
                 resolve.splice(i, 0, operate);
                 operates.splice(i, 1);
                 i--;
             }
             if (operates[i] === '/') {
                 if (resolve[i + 1] === 0) {abort = true}
-                let operate = resolve.splice(i, 2).reduce((total, item) => total / item);
+                let operate = resolve.splice(i, 2);
+                operate = operate[0] / operate[1];
                 resolve.splice(i, 0, operate);
                 operates.splice(i, 1);
                 i--;
@@ -104,34 +116,54 @@ function equals() {
     }
     for (let i = 0; i < operates.length; i++) {
         if (operates[i] === '+') {
-            let operate = resolve.splice(i, 2).reduce((total, item) => total + item);
+            let operate = resolve.splice(i, 2);
+            operate = operate[0] + operate[1]
             resolve.splice(i, 0, operate);
             operates.splice(i, 1);
             i--;
         }
         if (operates[i] === '-') {
-            let operate = resolve.splice(i, 2).reduce((total, item) => total - item);
+            let operate = resolve.splice(i, 2);
+            operate = operate[0] - operate[1];
             resolve.splice(i, 0, operate);
             operates.splice(i, 1);
             i--;
         }
     }
     if (!operates.length) {
-        currentValue = resolve.slice();
+        values = resolve.slice();
         display();
         checkAbort();
-    } else {
-        console.log(currentValue);
-        console.log(resolve);
-        console.log(operates);
-        console.error("equals error");
+        isEquals = true;
     }
 }
 
 function checkAbort() {
     if (abort) {
         abort = false;
-        currentValue = [""];
+        values = [""];
         document.getElementById("result").innerHTML = "&infin;";
     }
+}
+
+function backspace() {
+    if (isEquals) {
+        isEquals = false;
+        values = [""];
+        display();
+        return
+    }
+    if (values[values.length - 1] === "" && values.length > 1) {
+        values.splice(-2, 2)
+        values[values.length - 1] = getNumber(values[values.length - 1]);
+    } else {
+        values[values.length - 1] = Math.floor(values[values.length - 1] / 10) || "";
+    }
+    display();
+}
+
+function cleare() {
+    values = [""];
+    isEquals = false;
+    display();
 }
