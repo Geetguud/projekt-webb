@@ -32,6 +32,16 @@ function getRandom(useAlphabets, useNumbers, textCase) {
         } else {
             return getRandomChar(48, 57)
         }
+    } else if (useAlphabets) {
+        if (textCase === "mixed") {
+            let cond2 = Math.floor(Math.random() * 100) + 1;
+            if (cond2 <= 50) {return getRandomChar(97, 122)}
+            if (cond2 > 50) {return getRandomChar(65, 90)}
+        }
+        if (textCase === "lower") {return getRandomChar(97, 122)}
+        if (textCase === "upper") {return getRandomChar(65, 90)}
+    } else if (useNumbers) {
+        return getRandomChar(48, 57)
     }
 }
 
