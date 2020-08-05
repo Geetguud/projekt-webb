@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Roboto Slab", serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee;
+}
+
+.main {
+    width: 80em;
+    height: 45em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 1em;
+    color: #333333;
+    font-weight: 500;
+}
+
+.things {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0;
+    user-select: none;
+}
+
+.result {
+    width: 60%;
+    height: 75%;
+    border: 0.2em solid #333333;
+    border-radius: 0.5em;
+    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    margin: 1em;
+    font-size: 2em;
+}
+
+.title {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.options {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options label {
+    font-size: 2em;
+    margin: 0.2em 0;
+}
+
+.options input {
+    margin: 0 0.5em;
+    color: #333333;
+    font-family: "Roboto Slab", serif;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.1em 0.2em;
+    border: 0.1em solid #333333;
+    border-radius: 0.15em;
+    background-color: #eeeeee;
+}
+
+.options input:hover {
+    background-color: #dddddd;
+}
+
+.dropdown {
+    margin: 0.6em;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8em;
+    font-weight: 500;
+    padding: 0.15em;
+    color: #333333;
+    border: 0.1em solid #333333;
+    border-radius: 0.15em;
+    background-color: #eeeeee;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+    background-color: #dddddd;
+}
+
+.button {
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 0.2em 0.3em;
+    color: #333333;
+    border: 0.1em solid #333333;
+    border-radius: 0.15em;
+    background-color: #eeeeee;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #dddddd;
+}
