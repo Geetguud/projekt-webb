@@ -42,5 +42,5 @@ var LikeButton = function (_React$Component) {
     return LikeButton;
 }(React.Component);
 
-var domContainer = document.querySelector('#like_button_container');
+var domContainer = document.querySelector('#root');
 ReactDOM.render(React.createElement(LikeButton, null), domContainer);
