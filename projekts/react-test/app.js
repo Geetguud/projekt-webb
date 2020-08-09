@@ -8,11 +8,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-var App = function (_Component) {
-    _inherits(App, _Component);
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
     function App() {
         _classCallCheck(this, App);
@@ -36,7 +33,7 @@ var App = function (_Component) {
     }
 
     _createClass(App, [{
-        key: 'handleChange',
+        key: "handleChange",
         value: function handleChange(event) {
             var _event$target = event.target,
                 name = _event$target.name,
@@ -51,205 +48,205 @@ var App = function (_Component) {
             }) : this.setState(_defineProperty({}, name, value));
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'main',
+                "main",
                 null,
                 React.createElement(
-                    'form',
+                    "form",
                     null,
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'text',
-                            name: 'firstName',
+                        React.createElement("input", {
+                            type: "text",
+                            name: "firstName",
                             value: this.state.firstName,
                             onChange: this.handleChange,
-                            placeholder: 'First Name'
+                            placeholder: "First Name"
                         })
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'text',
-                            name: 'lastName',
+                        React.createElement("input", {
+                            type: "text",
+                            name: "lastName",
                             value: this.state.lastName,
                             onChange: this.handleChange,
-                            placeholder: 'Last Name'
+                            placeholder: "Last Name"
                         })
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'number',
-                            name: 'age',
+                        React.createElement("input", {
+                            type: "number",
+                            name: "age",
                             value: this.state.age,
                             onChange: this.handleChange,
-                            placeholder: 'Age'
+                            placeholder: "Age"
                         })
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'male',
+                        React.createElement("input", {
+                            type: "radio",
+                            name: "male",
                             value: this.state.gender,
                             onChange: this.handleChange,
                             checked: this.state.gender === "male"
                         }),
-                        ' Male'
+                        " Male"
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'female',
+                        React.createElement("input", {
+                            type: "radio",
+                            name: "female",
                             value: this.state.gender,
                             onChange: this.handleChange,
                             checked: this.state.gender === "female"
                         }),
-                        ' Female'
+                        " Female"
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'select',
+                        "select",
                         {
                             value: this.state.destination,
                             onChange: this.handleChange,
-                            name: 'destination'
+                            name: "destination"
                         },
                         React.createElement(
-                            'option',
-                            { value: '' },
-                            '-- Please Choose a Destination --'
+                            "option",
+                            { value: "" },
+                            "-- Please Choose a Destination --"
                         ),
                         React.createElement(
-                            'option',
-                            { value: 'germany' },
-                            'Germany'
+                            "option",
+                            { value: "germany" },
+                            "Germany"
                         ),
                         React.createElement(
-                            'option',
-                            { value: 'norway' },
-                            'Norway'
+                            "option",
+                            { value: "norway" },
+                            "Norway"
                         ),
                         React.createElement(
-                            'option',
-                            { value: 'north pole' },
-                            'North pole'
+                            "option",
+                            { value: "north pole" },
+                            "North pole"
                         ),
                         React.createElement(
-                            'option',
-                            { value: 'south pole' },
-                            'South pole'
+                            "option",
+                            { value: "south pole" },
+                            "South pole"
                         )
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'checkbox',
-                            name: 'isVegan',
+                        React.createElement("input", {
+                            type: "checkbox",
+                            name: "isVegan",
                             onChange: this.handleChange,
                             checked: this.state.dietaryRestrictions.isVegan
                         }),
-                        ' Vegan?'
+                        " Vegan?"
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'checkbox',
-                            name: 'isKosher',
+                        React.createElement("input", {
+                            type: "checkbox",
+                            name: "isKosher",
                             onChange: this.handleChange,
                             checked: this.state.dietaryRestrictions.isKosher
                         }),
-                        ' Kosher?'
+                        " Kosher?"
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'label',
+                        "label",
                         null,
-                        React.createElement('input', {
-                            type: 'checkbox',
-                            name: 'isLactoseFree',
+                        React.createElement("input", {
+                            type: "checkbox",
+                            name: "isLactoseFree",
                             onChange: this.handleChange,
                             checked: this.state.dietaryRestrictions.isLactoseFree
                         }),
-                        ' Lactose Free?'
+                        " Lactose Free?"
                     ),
-                    React.createElement('br', null),
+                    React.createElement("br", null),
                     React.createElement(
-                        'button',
+                        "button",
                         null,
-                        'Submit'
+                        "Submit"
                     )
                 ),
-                React.createElement('hr', null),
+                React.createElement("hr", null),
                 React.createElement(
-                    'h2',
+                    "h2",
                     null,
-                    'Entered Information :'
+                    "Entered Information :"
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Your name : ',
+                    "Your name : ",
                     this.state.firstName,
-                    ' ',
+                    " ",
                     this.state.lastName
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Your age : ',
+                    "Your age : ",
                     this.state.age
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Your gender : ',
+                    "Your gender : ",
                     this.state.gender
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Your destination : ',
+                    "Your destination : ",
                     this.state.destination
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Your dietary restrictions :'
+                    "Your dietary restrictions :"
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Vegan: ',
+                    "Vegan: ",
                     this.state.dietaryRestrictions.isVegan ? "Yes" : "No"
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Kosher: ',
+                    "Kosher: ",
                     this.state.dietaryRestrictions.isKosher ? "Yes" : "No"
                 ),
                 React.createElement(
-                    'p',
+                    "p",
                     null,
-                    'Lactose Free: ',
+                    "Lactose Free: ",
                     this.state.dietaryRestrictions.isLactoseFree ? "Yes" : "No"
                 )
             );
@@ -257,6 +254,6 @@ var App = function (_Component) {
     }]);
 
     return App;
-}(Component);
+}(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById("root"));
