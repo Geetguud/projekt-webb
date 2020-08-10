@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
-import Welcome from "./Welcome";
-import About from "./About";
+import Navbar from "Navbar.js";
+import Welcome from "Welcome.js";
+import About from "About.js";
 
 function Landpage() {
     return React.createElement(
