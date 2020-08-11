@@ -6,8 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import img from "./resources/pfp2.webp";
-
 var Welcome = function (_React$Component) {
     _inherits(Welcome, _React$Component);
 
@@ -42,7 +40,7 @@ var Welcome = function (_React$Component) {
                         "to this little place"
                     )
                 ),
-                React.createElement("img", { className: "geetguud", src: img })
+                React.createElement("img", { className: "geetguud", src: "./resources/pfp2.webp" })
             );
         }
     }]);
