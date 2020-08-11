@@ -6,6 +6,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import faUserCircle from "./resources/fa-user-circle.svg";
+import faScroll from "./resources/fa-scroll.svg";
+import faLink from "./resources/fa-link.svg";
+
 var Navbar = function (_React$Component) {
     _inherits(Navbar, _React$Component);
 
@@ -30,7 +34,7 @@ var Navbar = function (_React$Component) {
                         React.createElement(
                             "a",
                             { href: "#detail" },
-                            React.createElement("i", { className: "fas fa-user-circle" })
+                            React.createElement("object", { type: "image/svg+xml", data: faUserCircle, className: "svg" })
                         )
                     ),
                     React.createElement(
@@ -39,8 +43,7 @@ var Navbar = function (_React$Component) {
                         React.createElement(
                             "a",
                             { href: "#projekt" },
-                            React.createElement("i", { className: "fas fa-scroll" }),
-                            " "
+                            React.createElement("object", { type: "image/svg+xml", data: faScroll, className: "svg" })
                         )
                     ),
                     React.createElement(
@@ -49,8 +52,7 @@ var Navbar = function (_React$Component) {
                         React.createElement(
                             "a",
                             { href: "#contact" },
-                            React.createElement("i", { className: "fas fa-link" }),
-                            " "
+                            React.createElement("object", { type: "image/svg+xml", data: faLink, className: "svg" })
                         )
                     )
                 )
