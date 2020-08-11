@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import img from "./resources/pfp.webp";
+
 var About = function (_React$Component) {
     _inherits(About, _React$Component);
 
@@ -29,7 +31,7 @@ var About = function (_React$Component) {
                         null,
                         "about @me"
                     ),
-                    React.createElement("img", { className: "geetguudsmol", src: "https://i.ibb.co/3zkVTft/pfp.webp" })
+                    React.createElement("img", { className: "geetguudsmol", src: img })
                 ),
                 React.createElement(
                     "div",
@@ -42,7 +44,7 @@ var About = function (_React$Component) {
                     React.createElement(
                         "p",
                         null,
-                        "My name is Muhammad Ainurrahman, now's still newbie on being a coder. Currently, I'm a last year highschool student in Indonesia. Discovered about coding pretty much recently, and somehow chose web development. I have learned a bit about html, css, and javascript, thanks to free resources in the internet."
+                        "My name is Muhammad Ainurrahman, now's still newbie on being a coder. I'm currently a last year highschool student in Indonesia. Discovered about coding pretty much recently, and somehow chose web development. I have learned a bit about html, css, and javascript, thanks to free resources in the internet."
                     )
                 )
             );
