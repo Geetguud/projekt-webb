@@ -63,8 +63,10 @@ nav ul {
 	margin: 0.5em 0;
 }
 
-.link a i {
-	color: #fff;
+.svg {
+	height: 1em;
+	width: 1em;
+	pointer-events: none;
 }
 
 .welcome {
