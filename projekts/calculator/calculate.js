@@ -1,9 +1,13 @@
 "use strict"
 
+/*
+    **ADD KEYBOARD SUPPORT
+    **ADD MORE OPERATORS, SUCH AS NEGATIVES
+*/
+
 let values = [""];
 let abort = false;
 let isEquals = false;
-let isDark = false;
 
 function numEnter(num) {
     if (!values[values.length - 1] || isEquals) {
@@ -170,23 +174,9 @@ function cleare() {
 }
 
 function darkmode() {
-    if (!isDark) {
-        for (let i = 0; i < 17; i++) {
-            document.getElementsByClassName("button")[i].classList.add("darkmode");
-            document.getElementsByClassName("button")[i].classList.add("darkbutton");
-        }
-        document.getElementsByClassName("result")[0].classList.add("darkmode");
-        document.getElementsByClassName("title")[0].classList.add("darkmode");
-        document.getElementsByClassName("body")[0].classList.add("darkbackground");
-        isDark = true;
-    } else {
-        for (let i = 0; i < 17; i++) {
-            document.getElementsByClassName("button")[i].classList.remove("darkmode");
-            document.getElementsByClassName("button")[i].classList.remove("darkbutton");
-        }
-        document.getElementsByClassName("result")[0].classList.remove("darkmode");
-        document.getElementsByClassName("title")[0].classList.remove("darkmode");
-        document.getElementsByClassName("body")[0].classList.remove("darkbackground");
-        isDark = false;
-    }
+    let root = document.documentElement;
+    let light = getComputedStyle(root).getPropertyValue("--light");
+    let dark = getComputedStyle(root).getPropertyValue("--dark");
+    root.style.setProperty("--light", dark);
+    root.style.setProperty("--dark", light);
 }
