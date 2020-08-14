@@ -11,7 +11,7 @@ function generate() {
     return newQuot
 }
 
-function newQuot() {
+function newQuote() {
     currentQuot = generate();
     document.getElementById("display").innerHTML = `"${quotes[currentQuot]}"`;
 }
