@@ -1,6 +1,6 @@
 "use strict";
 
-import quotes from "./quotes.js"
+import quotes from "./quotes.js";
 
 let usedQuot = [];
 
