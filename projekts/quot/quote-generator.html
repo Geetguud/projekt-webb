@@ -58,6 +58,24 @@
             padding: 0.1em;
         }
     </style>
+
+    <script type="module">
+        import quotes from "./quotes.js";
+
+        let usedQuot = [];
+
+        function generate() {
+            let newQuot = Math.floor(Math.random() * quotes.length);
+            if (usedQuot.includes(newQuot)) {return generate()};
+            usedQuot.push(newQuot);
+            return newQuot
+        }
+
+        function newQuote() {
+            currentQuot = generate();
+            document.getElementById("display").innerHTML = `"${quotes[currentQuot]}"`;
+        }
+    </script>
 </head>
 
 <body class="body">
@@ -66,8 +84,6 @@
     </div>
 
     <h1 class="title">quote generator</h1>
-    <button class="button" onclick="newQuote">generate</button>
-
-    <script type="module" src="generate.js"></script>
+    <button class="button" onclick="newQuote()">generate</button>
 </body>
 </html>
