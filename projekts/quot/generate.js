@@ -1,8 +1,7 @@
 "use strict";
 
-import * as quot from "./quotes.json"
+import quotes from "./quotes.js"
 
-let quotes = JSON.parse(quot)
 let usedQuot = [];
 
 function generate() {

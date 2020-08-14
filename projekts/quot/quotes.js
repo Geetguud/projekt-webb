@@ -1,4 +1,4 @@
-[
+export default [
     "Which is better, to be born good or to overcome your evil nature through great effort?", 
     "There is no such thing as being too cautious.", 
     "You shall not attain knowledge unless you respect the teacher and the knowledge itself.", 
