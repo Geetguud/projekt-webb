@@ -10,10 +10,10 @@
         <div class="things">
             <h1 class="title">random string generator</h1>
 
-            <form class="options">
+            <form class="options" onsubmit="generate()">
                 <label for="alphabets"><input type="checkbox" id="alphabets" name="options" checked>alphabets</label>
                 <label for="numbers"><input type="checkbox" id="numbers" name="options" checked>numbers</label>
-                <label for="length">length :<input type="number" id="length" name="options" value="256" min="4" max="256"></label>
+                <label for="length">length :<input type="number" id="length" name="options" value="256" min="4" max="1024"></label>
                 <select id="dropdown" class="dropdown" name="options">
                     <option value="mixed" selected="selected">mixed case</option>
                     <option value="lower">lower case</option>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="result">
-            <p class="display" id="display">result</p>
+            <p class="display" id="display"></p>
         </div>
     </main>
 </body>

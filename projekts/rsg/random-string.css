@@ -41,14 +41,15 @@ html {
 }
 
 .result {
-    width: 60%;
-    height: 75%;
+    width: 125%;
+    min-height: 75%;
     border: 0.2em solid #333333;
     border-radius: 0.5em;
     margin-left: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1em;
 }
 
 .display {

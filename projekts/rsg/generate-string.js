@@ -3,8 +3,10 @@
 let currentString = "";
 
 function generate() {
+    event.preventDefault();
     let result = [];
     let length = document.getElementById("length").value;
+    if (length > 1024) {return}
     let useAlphabets = document.getElementById("alphabets").checked;
     let useNumbers = document.getElementById("numbers").checked;
     let textCase = document.getElementById("dropdown").value;
