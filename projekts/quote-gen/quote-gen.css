@@ -4,10 +4,11 @@
 }
 
 :root {
-    --dark: #333333;
+    --dark: #222222;
     --lightdark: #444444;
     --lighterdark: #555555;
     --light: #eeeeee;
+    --darklight: #dddddd;
     --darkerlight: #aaaaaa;
 }
 
@@ -32,13 +33,14 @@ body {
     width: 100%;
     position: absolute;
     top: 0;
-    background-color: var(--lighterdark);
-    border-bottom: 0.2rem solid var(--dark);
+    box-shadow: 0 0.9em 0.5em -0.4em var(--dark);
+    animation: fadein 0.8s ease-in-out;
 }
 
 .title {
     font-size: 5em;
-    padding: 3rem;
+    font-weight: 200;
+    padding: 4rem;
     text-shadow: 0 0 1em var(--darkerlight);
 }
 
@@ -51,31 +53,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
+    font-weight: 400;
     text-shadow: 0 0 0.05em var(--darkerlight);
+}
+
+.appear {animation: appear 0.25s ease-in-out}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background-color: var(--lighterdark);
-    border-top: 0.2rem solid var(--dark);
 }
 
 .button {
     font-family: "Raleway", sans-serif;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.4em 0.8em;
-    background-color: var(--dark);
+    background-color: transparent;
     border: none;
     border-radius: 0.2em;
+    box-shadow: 0 0 0.1em 0.1em var(--dark);
     color: var(--light);
-    margin: 2.5rem;
+    margin: 4rem;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    animation: fadein 0.8s ease-in-out;
 }
 
 .button:hover {
     cursor: pointer;
-    background-color: var(--lightdark);
+    background-color: var(--lighterdark);
+    box-shadow: 0 0 0.2em 0.2em var(--dark);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(1em);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
