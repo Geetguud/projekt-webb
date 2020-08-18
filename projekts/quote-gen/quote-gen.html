@@ -15,6 +15,7 @@
             if (quotes.length == used.length) {return}
             document.getElementById("display").innerHTML = `"${quotes[getRandomQuote()]}"`;
             document.getElementById("display").classList.remove("appear");
+            // document.getElementsByClassName("button")[0].style.visibility = "visible";
             void document.getElementById("display").offsetWidth;
             document.getElementById("display").classList.add("appear");
         }
@@ -25,6 +26,10 @@
             used.push(randomQuote);
             return randomQuote
         }
+
+        function copy() {
+            // Complete this function
+        }
     </script>
 </head>
 <body>
@@ -33,6 +38,7 @@
     </header>
     <div id="display" class="display appear"></div>
     <footer class="footer">
+        <button class="button" style="visibility: hidden;" onclick="copy()">Copy</button>
         <button class="button" onclick="getQuote()">Generate</button>
     </footer>
 </body>
