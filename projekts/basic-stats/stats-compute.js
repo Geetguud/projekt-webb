@@ -2,13 +2,14 @@
 
 function compute() {
     let inputData = document.getElementById("input-data").value
-        .split(" ")
+        .split(/\s/)
         .map(each => Number(each))
         .filter(each => each)
         .sort((a,b) => a - b);
     document.getElementById("mean").innerHTML = getMean(inputData);
     document.getElementById("mode").innerHTML = getMode(inputData);
     document.getElementById("median").innerHTML = getMedian(inputData);
+    animate();
 }
 
 function getMean(data) {
@@ -39,4 +40,12 @@ function getMedian(data) {
         median = (data[data.length / 2 - 1] + data[data.length / 2]) / 2
     }
     return median
+}
+
+function animate() {
+    ["mean", "mode", "median"].forEach(function(each) {
+        document.getElementById(each).classList.remove("fadeto");
+        void document.getElementById(each).offsetWidth;
+        document.getElementById(each).classList.add("fadeto");
+    })
 }
