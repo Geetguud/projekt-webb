@@ -87,6 +87,8 @@ header {
     font-size: 1.2em;
     padding: 1rem;
     background-color: var(--darklight);
+    border-left: 0.3rem solid var(--dark);
+    border-bottom: 0.3rem dotted var(--dark);
 }
 
 .subject {
@@ -119,6 +121,14 @@ header {
 
 .subject-title:hover {
     background-color: var(--darklight);
+}
+
+.linke {
+    color: var(--dark);
+}
+
+.linke:hover {
+    color: var(--dark);
 }
 
 .item {
