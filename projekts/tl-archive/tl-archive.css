@@ -31,7 +31,7 @@ main {
 }
 
 header {
-    border: 0.01rem solid #cdcdcd;
+    /* border: 0.1rem dotted #999999; */
     text-align: center;
     margin: 2rem 0;
 }
@@ -69,14 +69,29 @@ header {
 }
 
 .subject {
-    border: 0.01rem solid #cdcdcd;
-    margin-bottom: 1rem;
+    /* border: 0.1rem dotted #999999; */
+    margin-bottom: 2rem;
 }
 
 .subject-title {
     font-size: 1.1em;
     font-weight: 500;
-    border: 0.01rem solid #cdcdcd;
+    /* border: 0.1rem dotted #999999; */
     margin-bottom: 0.8rem;
     margin-left: 1rem;
+}
+
+.content {
+    /* border: 0.1rem dotted #999999; */
+}
+
+.item {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem 0.5rem 0 0;
 }
