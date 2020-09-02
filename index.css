@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --light: #eeeeee;
+    --darklight: #cccccc;
+    --dark: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Balsamiq Sans", cursive;
+    font-weight: 300;
+    color: var(--light);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--dark);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0
+}
+
+.descriptions { padding: 0 2rem; }
+
+.desc {
+    font-size: 2.5em;
+    letter-spacing: 0.1rem;
+    margin: 0.5rem 0;
+}
+
+.container {
+    width: 80%;
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.tile {
+    padding: 2rem 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tile:hover { transform: scale(1.1); }
+
+.preview {
+    width: 20rem;
+    height: 15rem;
+    border-radius: 0.2rem;
+}
+
+.projekt-title {
+    font-size: 2.5em;
+    margin: 1rem 0;
+}
+
+.projekt-desc { font-size: 1.8em; }
+.refer { font-size: 1.2em; }
+.refer:hover { color: var(--darklight); }
+
+@media (max-width: 760px) {
+    html { font-size: 8.5px; }
+    .desc { margin: 1rem 0; }
+}

@@ -15,4 +15,4 @@ I chose the quotes myself, from my quote collections.
 
 ### [Prime Factorizer](https://geetguud.github.io/projekt-webb/projekts/prime-factor/prime-factor.html)
 
-Was lazy at doing certain mathematics problem.
+Was lazy at doing particular mathematics problem.
