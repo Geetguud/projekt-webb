@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Prime Factorization</title>
 
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
         * {
             margin: 0;
             padding: 0;
@@ -24,25 +23,25 @@
             font-family: "Roboto Slab", serif;
             font-size: 10px;
             box-sizing: border-box;
+            background-color: var(--background);
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         main {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            background-color: var(--background);
             color: var(--color);
         }
 
         .enteree {
-            margin: 3em 0;
-            display: flex;
+            margin: 3rem 0;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
             user-select: none;
         }
 
@@ -50,52 +49,49 @@
             font-size: 4.5em;
             white-space: pre;
             text-align: right;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.2rem;
+            margin-right: 2.5rem;
         }
 
         .entery {
-            margin: 0 2em;
-            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             font-size: 2em;
         }
 
         .entry {
-            width: 10em;
-            margin: 0.25em 0 1em 0;
+            width: 20rem;
+            margin: 0.5rem 0 2rem 0;
             font-family: "Roboto Slab", serif;
             font-size: 1em;
             text-align: center;
-            padding: 0.1em;
+            padding: 0.2rem;
             color: var(--color);
-            border: 0.1em solid var(--color);
+            border: 0.2rem solid var(--color);
             background-color: var(--background);
-            border-radius: 0.15em;
+            border-radius: 0.3rem;
             transition: width 0.2s ease-out;
         }
 
         .entry:hover {
-            width: 11em;
+            width: 22rem;
             color: var(--color-darker);
             background-color: var(--background-darker);
         }
 
         .factorize {
-            width: 7em;
+            width: 14rem;
             font-family: "Roboto Slab", serif;
             font-size: 1em;
-            padding: 0.1em;
+            padding: 0.2rem;
             color: var(--color);
-            border: 0.1em solid var(--color);
+            border: 0.2rem solid var(--color);
             background-color: var(--background);
-            border-radius: 0.15em;
+            border-radius: 0.3rem;
             transition: width 0.2s ease-out;
         }
 
         .factorize:hover {
-            width: 8em;
+            width: 16rem;
             color: var(--color-darker);
             background-color: var(--background-darker);
             cursor: pointer;
@@ -110,31 +106,50 @@
             width: 50%;
             text-align: center;
             font-size: 3em;
-            padding: 0.5em;
-            border: 0.15em solid var(--color);
-            border-radius: 0.15em;
+            padding: 1rem;
+            border: 0.3rem solid var(--color);
+            border-radius: 0.3rem;
             transition: border-width 0.1s ease-in-out;
         }
 
-        .display:hover {
-            border-width: 0.1em;
-        }
+        .display:hover { border-width: 0.2rem; }
 
         .warning {
-            margin: 1em 0;
+            margin: 1rem;
             font-size: 1.5em;
             font-weight: 500;
             font-style: italic;
             user-select: none;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .enteree {
+                flex-direction: column;
+                margin: 5rem 0;
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .title {
+                white-space: unset;
+                text-align: center;
+                margin: 1rem 0;
+                font-size: 4em;
+            }
+
+            .display {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <main>
-        <div class="enteree">
+    <main class="flex">
+        <div class="enteree flex">
             <h1 class="title">prime
             factorization</h1>
-            <div class="entery">
+            <div class="entery flex">
                 <label for="entry">enter number to be factorized</label>
                 <input id="entry" class="entry" type="number" name="entry" placeholder="< here >">
                 <button class="factorize" onclick="factorize()">factorize</button>
@@ -143,7 +158,7 @@
 
         <div id="display" class="display"></div>
 
-        <p class="warning">warning: too large number may crash the entire process</p>   
+        <p class="warning">warning: too large number may crash the app</p>   
     </main>
 
     <script src="factorize.js"></script>
