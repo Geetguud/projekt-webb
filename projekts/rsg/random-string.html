@@ -5,15 +5,15 @@
     <script src="generate-string.js"></script>
 </head>
 
-<body class="body">
-    <main class="main">
-        <div class="things">
+<body class="body flex">
+    <main class="main flex">
+        <div class="things flex">
             <h1 class="title">random string generator</h1>
 
-            <form class="options" onsubmit="generate()">
+            <form class="options flex" onsubmit="generate()">
                 <label for="alphabets"><input type="checkbox" id="alphabets" name="options" checked>alphabets</label>
                 <label for="numbers"><input type="checkbox" id="numbers" name="options" checked>numbers</label>
-                <label for="length">length :<input type="number" id="length" name="options" value="256" min="4" max="1024"></label>
+                <label for="length">length :<input type="number" id="length" name="options" value="256" min="4" max="512"></label>
                 <select id="dropdown" class="dropdown" name="options">
                     <option value="mixed" selected="selected">mixed case</option>
                     <option value="lower">lower case</option>
@@ -24,7 +24,7 @@
             <button class="button" onclick="generate()">generate</button>
         </div>
 
-        <div class="result">
+        <div class="result flex">
             <p class="display" id="display"></p>
         </div>
     </main>
