@@ -50,7 +50,7 @@ main {
 
 .container {
     width: 80%;
-    margin: 4rem 0;
+    margin: 3rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(25rem, 1fr));
@@ -78,7 +78,17 @@ main {
 
 .projekt-desc { font-size: 1.8em; }
 .refer { font-size: 1.2em; }
-.refer:hover { color: var(--darklight); }
+.refer a { text-decoration: underline; }
+
+.refer a:hover {
+    color: var(--darklight);
+    text-decoration: none;
+}
+
+.projekt-to {
+    font-size: 2em;
+    margin: 1rem;
+}
 
 @media (max-width: 760px) {
     html { font-size: 8.5px; }
